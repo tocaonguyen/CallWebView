@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-callwebview" version="1.0.0">
+   <name>CallWebView</name>
+   <js-module name="CallWebView" src="www/CallWebView.js">
+      <clobbers target="CallWebView" />
+   </js-module>
+
+   <platform name="android">
+      <config-file parent="/*" target="res/xml/config.xml">
+         <feature name="CallWebView">
+            <param name="android-package" value="cordova.plugin.callwebview.CallWebView" />
+         </feature>
+      </config-file>
+      <config-file parent="/*" target="AndroidManifest.xml" />
+      <source-file src="src/android/CallWebView.java" target-dir="src/cordova/plugin/callwebview/CallWebView" />
+   </platform>
+
+   <platform name="ios">
+      <config-file parent="/*" target="config.xml">
+         <feature name="CallWebView">
+            <param name="ios-package" value="CallWebView" />
+         </feature>
+      </config-file>
+      <source-file src="src/ios/CallWebView.m" />
+   </platform>
+</plugin>
